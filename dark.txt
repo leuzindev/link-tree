@@ -1,0 +1,21 @@
+import React, { useState } from 'react';
+
+function MyComponent() {
+  const [bgColor, setBgColor] = useState('bg-red-500');
+  const [bgImage, setBgImage] = useState('bg-cover bg-center');
+
+  const handleClick = () => {
+    setBgColor(bgColor === 'bg-red-500' ? 'bg-blue-500' : 'bg-red-500');
+    setBgImage(bgImage === 'bg-cover bg-center' ? 'bg-cover bg-center' : 'bg-cover bg-center');
+  };
+
+  return (
+    <div className={`${bgColor} ${bgImage}`}>
+      <button onClick={handleClick} className="bg-gray-500 p-2">
+        Change Color and Image
+      </button>
+    </div>
+  );
+}
+
+export default MyComponent;
